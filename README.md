@@ -23,15 +23,26 @@ docker run -it --rm --name orca umdsri/openmpi-orca
 
 ---
 
-## Build and deploy on OpenShift
+## Build and deploy
 
-Build without using DockerHub:
+See [documentation to build without using DockerHub](https://maastrichtu-ids.github.io/dsri-documentation/docs/guide-dockerfile-to-openshift).
 
-https://maastrichtu-ids.github.io/dsri-documentation/docs/guide-dockerfile-to-openshift
+Create build in `test-vincent` project:
 
 ```bash
+oc project test-vincent
 oc new-build --name openmpi-orcas-vieru --binary
+```
+
+Build:
+
+```bash
 oc start-build openmpi-orcas-vieru --from-dir=. --follow --wait
+```
+
+Deploy from build:
+
+```bash
 oc new-app openmpi-orcas-vieru
 ```
 
