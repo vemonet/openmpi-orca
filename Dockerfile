@@ -23,7 +23,8 @@ RUN echo "export PATH=\$PATH:\$HOME/opt/openmpi/bin" >> $HOME/.bashrc
 RUN echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$HOME/opt/openmpi/lib" >> $HOME/.bashrc
 
 # 3.4G file that can be download by going to a forum from the 90': https://orcaforum.kofo.mpg.de/app.php/dlext/
-ADD  ./orca_4_2_1_linux_x86-64_openmpi314.tar.xz $HOME/opt
+# ADD  ./orca_4_2_1_linux_x86-64_openmpi314.tar.xz $HOME/opt
+COPY  ./orca_4_2_1_linux_x86-64_openmpi314.tar.xz $HOME/opt/
 RUN tar xzvf $HOME/opt/orca_4_2_1_linux_x86-64_openmpi314.tar.xz
 # Cannot be redistributed
 
