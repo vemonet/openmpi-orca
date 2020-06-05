@@ -23,6 +23,12 @@ docker build -t openmpi-orca .
 docker run -it --rm --name orca openmpi-orca
 ```
 
+### Connect
+
+```bash
+docker exec -it orca bash
+```
+
 ---
 
 ## Build and deploy
@@ -53,7 +59,7 @@ oc new-app openmpi-orcas-vieru
 Docker build:
 
 ```bash
-docker build -t openmpi-orca .
+docker build --no-cache -t openmpi-orca .
 ```
 
 Push the local image to OpenShift:
@@ -79,7 +85,13 @@ oc rsh openmpi-orca-app
 Run orca:
 
 ```bash
-orca.exe orca-test.inp > orca_results.out
+./orca --allow-run-as-root orca-test.inp
+```
+
+With output file:
+
+```bash
+./orca --allow-run-as-root orca-test.inp > orca_results.out
 ```
 
 ## Delete deployment
