@@ -16,8 +16,8 @@ RUN make install
 
 RUN rm /tmp/openmpi-3.1.4.tar.gz
 
-RUN echo "export PATH=\$PATH:\$HOME/opt/openmpi/bin" >> $HOME/.bashrc
-RUN echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$HOME/opt/openmpi/lib" >> $HOME/.bashrc
+RUN echo "export PATH=\$PATH:/root/openmpi/bin" >> $HOME/.bashrc
+RUN echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/root/openmpi/lib" >> $HOME/.bashrc
 
 
 # 3.4G file that can be download by going to a forum from the 90': https://orcaforum.kofo.mpg.de/app.php/dlext/

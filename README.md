@@ -73,19 +73,20 @@ oc new-app openmpi-orca --name openmpi-orca-app
 Copy the test file to the pod:
 
 ```bash
-oc cp orca-test.inp openmpi-orca-app:/root
+oc cp orca-test.inp openmpi-orca-app:/root/orca
 ```
 
 Connect to the pod:
 
 ```bash
 oc rsh openmpi-orca-app
+cd orca
 ```
 
 Run orca:
 
 ```bash
-./orca --allow-run-as-root orca-test.inp
+./orca orca-test.inp --allow-run-as-root
 ```
 
 With output file:
